@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 3f00263103b3b4240941aafa7162ac78
+timeCreated: 1520605136
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: SEA GARDENS
+  fontNames:
+  - SEA GARDENS
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

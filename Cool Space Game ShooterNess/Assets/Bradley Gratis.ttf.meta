@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 525168f49c13d564fa738acff1d9453c
+timeCreated: 1520604983
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bradley Gratis
+  fontNames:
+  - Bradley Gratis
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
