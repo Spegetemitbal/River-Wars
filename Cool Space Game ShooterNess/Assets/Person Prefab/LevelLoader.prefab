@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3121173760394160338}
   - component: {fileID: 4880354095082046219}
+  - component: {fileID: -3029161418455487906}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -85,6 +86,59 @@ MonoBehaviour:
   Charger: {fileID: 1199308273477250, guid: daccafca370f78d498b02118b39f1eee, type: 3}
   SpawnPoint1: {fileID: 2016354698415680197}
   SpawnPoint2: {fileID: 1109400275757298951}
+--- !u!114 &-3029161418455487906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977946319443759221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NotificationBehavior: 0
+  m_MaxPlayerCount: 3
+  m_AllowJoining: 1
+  m_JoinBehavior: 1
+  m_PlayerJoinedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_PlayerLeftEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_JoinAction:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Join
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 74a7217d-3c89-44ff-813b-b28d1fec5cf7
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: f4c0d834-e196-41f7-b66e-99e06191957b
+        m_Path: <Gamepad>/leftStick
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Join
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PlayerPrefab: {fileID: 400091058087416329, guid: 9e7960d9b111a7a43aed7d0529cb3167,
+    type: 3}
+  m_SplitScreen: 0
+  m_MaintainAspectRatioInSplitScreen: 0
+  m_FixedNumberOfSplitScreens: -1
+  m_SplitScreenRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
 --- !u!1 &9020257176314608525
 GameObject:
   m_ObjectHideFlags: 0

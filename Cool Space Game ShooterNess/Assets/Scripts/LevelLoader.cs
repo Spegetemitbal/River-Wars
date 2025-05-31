@@ -36,10 +36,12 @@ public class LevelLoader : MonoBehaviour{
 
 		PlayerController p1 = Instantiate(listThingie[(int)SelectionData.p1Class], SpawnPoint1.position, SpawnPoint1.rotation).GetComponent<PlayerController>();
 		p1.SetSecondPlayer(false);
+		p1.playerIndex = 0;
         if (SelectionData.currentGameMode == GameModes.Brawl)
 		{
 			PlayerController p2 = Instantiate(listThingie[(int)SelectionData.p2Class], SpawnPoint2.position, SpawnPoint2.rotation).GetComponent<PlayerController>();
 			p2.SetSecondPlayer(true);
+			p2.playerIndex = 1;
 		} 
     }
 

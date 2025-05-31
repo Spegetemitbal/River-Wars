@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour {
 	//For IFrames.
 	bool invincible = false;
 
+	public int playerIndex = 0;
+	public Vector2 moveAxis = Vector2.zero;
+	public bool isShooting = false;
+
 	public float speed;
 	public float tilt;
 	public Boundary boundary;	
@@ -95,49 +99,52 @@ public class PlayerController : MonoBehaviour {
 			sphereCol.radius = sphereCol.radius * 2; 
 			Badshield = false;
 		}
-		if (Input.GetButton("Fire1") && Time.time > nextFire)
+		if (isShooting)
 		{
-			nextFire = Time.time + fireRate;
-			GameObject b1 = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
-			b1.tag = bulletTag;
-			//SourceSund.Play ();
-			if (CircleDeath) {
+            if (Time.time > nextFire)
+            {
+                nextFire = Time.time + fireRate;
+                GameObject b1 = Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+                b1.tag = bulletTag;
+                //SourceSund.Play ();
+                if (CircleDeath)
+                {
 
-				for (int i = 0; i < 10; i++)
-				{
-					GameObject b2 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3(0f, 15f + ((float)i * 10), 0f))));
-                    GameObject b3 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3(0f, -15f + ((float)i * -10), 0f))));
-					b2.tag = bulletTag;
-					b3.tag = bulletTag;
+                    for (int i = 0; i < 10; i++)
+                    {
+                        GameObject b2 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3(0f, 15f + ((float)i * 10), 0f))));
+                        GameObject b3 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3(0f, -15f + ((float)i * -10), 0f))));
+                        b2.tag = bulletTag;
+                        b3.tag = bulletTag;
+                    }
+
+                    CircleDeath = false;
                 }
-
-				CircleDeath = false;
-			}
-			else if (TripleShot) {
-                GameObject b2 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3 (0f, 15f, 0f))));
-                GameObject b3 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3 (0f, -15f, 0f))));
-                b2.tag = bulletTag;
-                b3.tag = bulletTag;
+                else if (TripleShot)
+                {
+                    GameObject b2 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3(0f, 15f, 0f))));
+                    GameObject b3 = Instantiate(shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3(0f, -15f, 0f))));
+                    b2.tag = bulletTag;
+                    b3.tag = bulletTag;
+                }
+                //GetComponent<AudioSource>().Play ();
             }
-			//GetComponent<AudioSource>().Play ();
-		}
+			isShooting = false;
+        }
 	}
 	void FixedUpdate ()
 	{
 		//this is all the movement and rotation code
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
-		float shootHorizontal = Input.GetAxis ("HorizontalRot");
-		float shootVertical = Input.GetAxis ("VerticalRot");
 
-		if (Mathf.Abs (Input.GetAxis ("HorizontalRot")) > 0.1f || Mathf.Abs (Input.GetAxis ("VerticalRot")) > 0.1f) {
-			float angle = Mathf.Atan2 (shootHorizontal, -shootVertical) * Mathf.Rad2Deg;
-			transform.rotation = Quaternion.Euler (new Vector3 (90, 0, -angle));
-		}
-		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
+		Vector3 movement = new Vector3 (moveAxis.x, 0.0f, moveAxis.y);
 		rb.velocity = movement * speed;
+		if (rb.velocity.magnitude > 0.1f)
+		{
+			float angle = Mathf.Atan2(moveAxis.x, moveAxis.y) * Mathf.Rad2Deg;
+			transform.rotation = Quaternion.Euler(new Vector3(90, 0, -angle));
+        }
 
-		rb.position = new Vector3(
+        rb.position = new Vector3(
 			Mathf.Clamp (rb.position.x, boundary.xMin, boundary.xMax),
 			0.0f,
 			Mathf.Clamp (rb.position.z, boundary.zMin, boundary.zMax)
