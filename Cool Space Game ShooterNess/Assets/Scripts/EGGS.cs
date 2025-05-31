@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class EGGS : MonoBehaviour {
 	public Animator anim;
-	bool life = false;
-	bool life1 = false;
+	int life = 3;
+	int life1 = 3;
 
 	void Update(){
 		
@@ -17,7 +17,7 @@ public class EGGS : MonoBehaviour {
 		
 		GameObject thingWhatIHit = collider.gameObject;
 			if (gameObject.name == "EGGSY") {
-			if (life) {
+			if (life < 1) {
 				if (thingWhatIHit.CompareTag ("Asstroid")) {
 					Camera.main.GetComponent<HazardSpawner> ().Eggkill ();
 					StartCoroutine (Killdis());
@@ -29,7 +29,7 @@ public class EGGS : MonoBehaviour {
 			}
 		}
 		if (gameObject.name == "EGGSY1"){
-			if (life1) {
+			if (life1 < 1) {
 				if (thingWhatIHit.CompareTag ("Asstroid")) {
 					Camera.main.GetComponent<HazardSpawner> ().Eggkill ();
 					StartCoroutine (Killdis1());
@@ -45,13 +45,13 @@ public class EGGS : MonoBehaviour {
 	IEnumerator death(){
 		anim.Play ("Hurt");
 		yield return new WaitForSeconds (0.4f);
-		life = true;
+		life--;
 	}
 
      public IEnumerator death1(){
 		anim.Play ("Hurt");
 		yield return new WaitForSeconds (0.4f);
-		life1 = true;
+		life1--;
 	}
 	public IEnumerator Killdis1(){
 		anim.Play ("Eggsy ness");

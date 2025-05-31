@@ -62,8 +62,9 @@ public class ButtonPressing : MonoBehaviour {
 			SelectionData.p1Class = playerClass;
 			if (SelectionData.currentGameMode == GameModes.TowerDefense)
 			{
-
-			}
+                LoadLevel();
+				return;
+            }
 			playertwo = true;
             if (showPlayerText)
             {
