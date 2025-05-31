@@ -7,7 +7,7 @@ public class OpShot : MonoBehaviour {
 	void OnTriggerEnter(Collider collider){
 		GameObject thingWhatIHit = collider.gameObject;
 		if (thingWhatIHit.CompareTag ("Player") || thingWhatIHit.CompareTag ("Player2")) {
-			Camera.main.GetComponent<WAIIIIIIT> ().DeathCircle ();
+			Camera.main.GetComponent<HazardSpawner> ().DeathCircle ();
 			Destroy (this.gameObject);
 		}
 	}

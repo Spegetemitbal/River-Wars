@@ -15,7 +15,7 @@ public class ShieldNOOOWWW : MonoBehaviour {
 			g.transform.localPosition = new Vector3 (0, 0, 0);
 			g.transform.localEulerAngles = new Vector3 (0, 0, 0);
 			g.transform.localScale = new Vector3 (0.5f,0.5f,0.5f);
-			Camera.main.GetComponent<WAIIIIIIT> ().shieldResStart ();
+			Camera.main.GetComponent<HazardSpawner> ().shieldResStart ();
 			Destroy (this.gameObject);
 		}
 	}

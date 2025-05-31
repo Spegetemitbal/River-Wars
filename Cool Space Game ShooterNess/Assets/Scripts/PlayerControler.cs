@@ -91,7 +91,7 @@ public class PlayerControler : MonoBehaviour {
 
 				CircleDeath = false;
 			}
-			if (NeedForSpeed.Treeple) {
+			if (LevelLoader.Treeple) {
 				Instantiate (shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3 (0f, 15f, 0f))));
 				Instantiate (shot, shotSpawn.position, Quaternion.Euler(shotSpawn.eulerAngles + (new Vector3 (0f, -15f, 0f))));
 
@@ -132,7 +132,7 @@ public class PlayerControler : MonoBehaviour {
 				if (GameObject.Find ("PlayerTwo") != null) {
 					MenuStart.Scoring = true;
 					Destroy (this.gameObject);
-					Camera.main.GetComponent<WAIIIIIIT> ().startStop ();
+					Camera.main.GetComponent<HazardSpawner> ().startStop ();
 				}
 			}
 		}
@@ -141,7 +141,7 @@ if (shield == false){
 				if (GameObject.Find ("PlayerTwo") != null) {
 					MenuStart.Scoring = true;
 	              	Destroy (this.gameObject);
-					Camera.main.GetComponent<WAIIIIIIT> ().startStop ();
+					Camera.main.GetComponent<HazardSpawner> ().startStop ();
 				}
 			}
 
@@ -203,6 +203,6 @@ if (shield == false){
 	}
 	IEnumerator Lifeness (){
 		yield return new WaitForSeconds (0.25f);
-		NeedForSpeed.Life = false;
+		LevelLoader.Life = false;
 	}
 }

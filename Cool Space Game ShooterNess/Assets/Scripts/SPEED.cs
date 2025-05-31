@@ -7,7 +7,7 @@ public class SPEED : MonoBehaviour {
 	void OnTriggerEnter(Collider collider){
 		GameObject thingWhatIHit = collider.gameObject;
 		if (thingWhatIHit.CompareTag ("Player") || thingWhatIHit.CompareTag ("Player2")) {
-			Camera.main.GetComponent<WAIIIIIIT> ().Speeder ();
+			Camera.main.GetComponent<HazardSpawner> ().Speeder ();
 			Destroy (this.gameObject);
 		}
 	}

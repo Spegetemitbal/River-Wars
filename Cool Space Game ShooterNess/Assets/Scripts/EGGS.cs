@@ -19,7 +19,7 @@ public class EGGS : MonoBehaviour {
 			if (gameObject.name == "EGGSY") {
 			if (life) {
 				if (thingWhatIHit.CompareTag ("Asstroid")) {
-					Camera.main.GetComponent<WAIIIIIIT> ().Eggkill ();
+					Camera.main.GetComponent<HazardSpawner> ().Eggkill ();
 					StartCoroutine (Killdis());
 				}
 			} else {
@@ -31,7 +31,7 @@ public class EGGS : MonoBehaviour {
 		if (gameObject.name == "EGGSY1"){
 			if (life1) {
 				if (thingWhatIHit.CompareTag ("Asstroid")) {
-					Camera.main.GetComponent<WAIIIIIIT> ().Eggkill ();
+					Camera.main.GetComponent<HazardSpawner> ().Eggkill ();
 					StartCoroutine (Killdis1());
 				}
 			} else {

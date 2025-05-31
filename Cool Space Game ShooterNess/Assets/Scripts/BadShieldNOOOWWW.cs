@@ -7,7 +7,7 @@ public class BadShieldNOOOWWW : MonoBehaviour {
 	void OnTriggerEnter(Collider collider){
 		GameObject thingWhatIHit = collider.gameObject;
 		if (thingWhatIHit.CompareTag ("Player") || thingWhatIHit.CompareTag ("Player2")) {
-			Camera.main.GetComponent<WAIIIIIIT> ().shieldResStart ();
+			Camera.main.GetComponent<HazardSpawner> ().shieldResStart ();
 			Destroy (this.gameObject);
 		}
 	}
