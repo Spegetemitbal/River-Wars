@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class LevelLoader : MonoBehaviour{
@@ -33,10 +34,12 @@ public class LevelLoader : MonoBehaviour{
 		listThingie.Add(TripleShot);
 
 
-		Instantiate(listThingie[(int)SelectionData.p1Class], SpawnPoint1.position, SpawnPoint1.rotation);
+		PlayerController p1 = Instantiate(listThingie[(int)SelectionData.p1Class], SpawnPoint1.position, SpawnPoint1.rotation).GetComponent<PlayerController>();
+		p1.SetSecondPlayer(false);
         if (SelectionData.currentGameMode == GameModes.Brawl)
 		{
-			Instantiate(listThingie[(int)SelectionData.p2Class], SpawnPoint2.position, SpawnPoint2.rotation);
+			PlayerController p2 = Instantiate(listThingie[(int)SelectionData.p2Class], SpawnPoint2.position, SpawnPoint2.rotation).GetComponent<PlayerController>();
+			p2.SetSecondPlayer(true);
 		} 
     }
 

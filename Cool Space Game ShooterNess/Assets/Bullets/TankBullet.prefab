@@ -9,18 +9,37 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1826603004422728}
+  m_RootGameObject: {fileID: 1333722159497260}
   m_IsPrefabParent: 1
---- !u!1 &1517882524172064
+--- !u!1 &1333722159497260
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4374512816408686}
-  - component: {fileID: 33272660815514490}
-  - component: {fileID: 23189482857130240}
+  - component: {fileID: 4505860255340762}
+  - component: {fileID: 54124790598978534}
+  - component: {fileID: 136224390735408208}
+  - component: {fileID: 114884155315402472}
+  - component: {fileID: 114529127665129550}
+  m_Layer: 0
+  m_Name: TankBullet
+  m_TagString: bullet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1467260974079574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4486071975579830}
+  - component: {fileID: 33815251701198182}
+  - component: {fileID: 23859044069456588}
   m_Layer: 0
   m_Name: VFX
   m_TagString: Untagged
@@ -28,58 +47,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1826603004422728
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4856793692324994}
-  - component: {fileID: 54150202406408314}
-  - component: {fileID: 136389313788010996}
-  - component: {fileID: 114106940169506528}
-  - component: {fileID: 114067287909764872}
-  m_Layer: 0
-  m_Name: Need For Speed 2
-  m_TagString: bulletP
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4374512816408686
+--- !u!4 &4486071975579830
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1517882524172064}
+  m_GameObject: {fileID: 1467260974079574}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071067}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4856793692324994}
+  m_Father: {fileID: 4505860255340762}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4856793692324994
+--- !u!4 &4505860255340762
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826603004422728}
+  m_GameObject: {fileID: 1333722159497260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
-  - {fileID: 4374512816408686}
+  - {fileID: 4486071975579830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23189482857130240
+--- !u!23 &23859044069456588
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1517882524172064}
+  m_GameObject: {fileID: 1467260974079574}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -87,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 0702ad509de6d5e4a82e6e801ab6542e, type: 2}
+  - {fileID: 2100000, guid: bb39017316e91114882e998b178011e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,19 +106,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33272660815514490
+--- !u!33 &33815251701198182
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1517882524172064}
+  m_GameObject: {fileID: 1467260974079574}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54150202406408314
+--- !u!54 &54124790598978534
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826603004422728}
+  m_GameObject: {fileID: 1333722159497260}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -128,39 +128,38 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114067287909764872
+--- !u!114 &114529127665129550
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826603004422728}
+  m_GameObject: {fileID: 1333722159497260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe9ac950fb7ed44298b2f481742455f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114884155315402472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1333722159497260}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfa6bd2a3d926fa46b02983fd1bf997a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114106940169506528
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826603004422728}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7240d2ae2f716c14aa5ea119e7d85f82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
---- !u!136 &136389313788010996
+--- !u!136 &136224390735408208
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826603004422728}
+  m_GameObject: {fileID: 1333722159497260}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 0.5
   m_Height: 0.5
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}

@@ -200,11 +200,12 @@ MonoBehaviour:
   Speedo: 0
   BadRapFir: 0
   BadSpeedo: 0
+  TripleShot: 0
   sound: {fileID: 0}
   SourceSund: {fileID: 0}
   shield: 0
   Badshield: 0
-  shot: {fileID: 1005801815056178, guid: 3340e7c116a71874c98f292f0a1512cc, type: 3}
+  shot: {fileID: 1446309527652522, guid: d6f647f3325de364da17c5a53c73c9a3, type: 3}
   shotSpawn: {fileID: 4201706644914358}
   fireRate: 0.5
 --- !u!64 &64127184383212814

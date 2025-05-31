@@ -3,15 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
-public class Boondary
-{	
-	public float xMin, xMax, zMin, zMax;
-}
 
 public class Player2Controler : MonoBehaviour {
 	public float speed;
 	public float tilt;
-	public Boondary boundary;
+	public Boundary boundary;
 	public bool CircleDeath = false;
 	public bool RapFir = false;
 	public bool Speedo = false;
